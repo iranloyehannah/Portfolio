@@ -7,7 +7,7 @@ interface MenuProps {
   darkMode: boolean;
   onToggle: () => void;
 }
-const menus = ["Home", "About", "Projects"];
+const menus: string[]= ["Home", "About", "Projects"];
 function Menu({ darkMode, onToggle }: MenuProps) {
   return (
     <>

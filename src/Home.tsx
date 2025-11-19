@@ -6,7 +6,7 @@ interface HomeProps {
 }
 
 
-const Home = ({darkMode} : HomeProps) => {
+const Home:React.FC<HomeProps> = ({darkMode} : HomeProps) => {
   return (
     <main className="max-w-full min-h-screen  flex items-center justify-evenly ">
       <div className="flex flex-col items-center gap-4">
