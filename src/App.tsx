@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Menu from "./Menu"
+import {
+  Box,
+  createTheme,
+  ThemeProvider,
+  CssBaseline,
+} from "@mui/material";
+
+import { useState, useMemo } from "react";
+import Home from "./Home";
+// import Balls from "./Balls"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [darkMode, setDarkMode] = useState(false);
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: darkMode ? "dark" : "light",
+        },
+      }),
+    [darkMode]
+  );
+  const handleToggle = () => setDarkMode(!darkMode);
 
   return (
     <>
-      <div className='flex '>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 >Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    {/* <div className="relative min-h-screen overflow-hidden">
+      <Balls />
+    </div> */}
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Box
+          sx={{
+            minHeight: "100vh",
+            backgroundColor: darkMode ?  "#0f172a" : "#f5f5f5",
+            color: darkMode ? "#ffffff" : "#000000",
+            py: 2,
+
+            px: 4,
+            position: "relative",
+            zIndex : 10,
+
+          }}
+        >
+
+          <Menu darkMode={darkMode} onToggle={handleToggle} />
+        <div className="mt-8">
+          <Home  darkMode={darkMode}/>
+        </div>
+        </Box>
+      </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

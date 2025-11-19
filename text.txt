@@ -1,0 +1,30 @@
+ <div className="border border-green-500 flex flex-col items-center justify-center"> 
+          <h1 className="font-bold text-7xl ">Hi, I'm </h1>
+          <h1 className="text-7xl font-bold bg-gradient-to-br from-[#38BDF8] to-[#0369A1] bg-clip-text text-transparent">
+            Iranloye Hannah
+          </h1>
+          <div className="">
+            <h2 style={{ fontFamily: "monospace" }}>
+              <Typewriter
+                words={[
+                  "Frontend Developer.",
+                  "Virtual Assistant",
+                  "Customer relationship management",
+                  "Digital Marketer.",
+                ]}
+                loop={0}
+                cursor
+                cursorStyle="▎"
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </h2>
+          </div>
+        </div>
+
+        {/* <div className="border border-green-500 flex flex-col items-center justify-center">
+          <div className="w-120 h-120 flex items-center justify-center border border-green-500 rounded-full bg-gradient-to-br from-[#38BDF8] to-[#0369A1] ">
+            <img src={Hannah} alt={Hannah} />
+          </div>
+        </div> */}
