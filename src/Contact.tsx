@@ -33,7 +33,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
     <section id="contact" className="flex flex-col items-center justify-center py-8 md:py-12 px-4 md:px-6">
       <h2
         className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 gradient-text"
-        style={{ animation: "fadeIn 0.8s ease-out" }}
+        style={{ animation: "fadeIn 0.8s ease-out", paddingBottom: "2rem" }}
       >
         Get In Touch
       </h2>
