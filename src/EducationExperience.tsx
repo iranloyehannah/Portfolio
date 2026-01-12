@@ -27,6 +27,7 @@ const EducationExperience: React.FC<EducationExperienceProps> = ({
     "Worked on personal projects to build a portfolio",
     "Participated in hands-on learning through platforms like FreeCodeCamp and Scrimba",
     "Built capstone project for diploma certification for AltSchool",
+    "Received a certificate of volunteering at AltSchool Africa"
   ];
 
   return (
