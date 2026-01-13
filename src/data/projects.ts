@@ -2,6 +2,8 @@ import spaceTravel from "../assets/thumbnails/spaceTravel.png";
 import ecommerceProduct from "../assets/thumbnails/sneaker.png";
 import interactiveCard from "../assets/thumbnails/interactiveCard.png";
 import bigFarma from "../assets/thumbnails/bigFarma.png";
+import InstaSpots from "../assets/thumbnails/instaspots.png"
+import Todo from "../assets/thumbnails/todoapp.png"
 interface MyProjectsProps {
   thumbNail: string;  
   name?: string;
@@ -40,5 +42,20 @@ export const projects: MyProjectsProps[] = [
     tools: ["Javascript", "React", "CSS"],
     liveLink: "https://react-interactive-card-gamma.vercel.app/",
     repoLink: "https://github.com/iranloyehannah/React-Interactive-card"
-  }
+  },
+
+  {thumbNail: Todo,
+    name: "Todo List",
+    description: "This project is a Javascript application, It displays and add new cards.",
+    tools: ["React", "Material Ui", "TailwindCss"],
+    liveLink: "https://react-todo-app-five-blond.vercel.app/",
+    repoLink: "https://github.com/iranloyehannah/React-Todo-App"
+  },
+  {thumbNail: InstaSpots,
+    name: "InstaSpots",
+    description: "This project is a Javascript application, It displays and add new cards.",
+    tools: ["Javascript", "Html", "CSS"],
+    liveLink: "https://circle-03-instaspotsproject.vercel.app/",
+    repoLink: "https://github.com/Caisere/circle-03-instaspotsproject"
+  },
 ]
