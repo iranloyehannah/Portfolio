@@ -1,9 +1,11 @@
-import spaceTravel from "../assets/thumbnails/spaceTravel.png";
-import ecommerceProduct from "../assets/thumbnails/sneaker.png";
-import interactiveCard from "../assets/thumbnails/interactiveCard.png";
-import bigFarma from "../assets/thumbnails/bigFarma.png";
-import InstaSpots from "../assets/thumbnails/instaspots.png"
-import Todo from "../assets/thumbnails/todoapp.png"
+import spaceTravel from "../assets/thumbnails/spaceTravel.webp";
+import ecommerceProduct from "../assets/thumbnails/sneaker.webp";
+import interactiveCard from "../assets/thumbnails/interactiveCard.webp";
+import bigFarma from "../assets/thumbnails/bigFarma.webp";
+import InstaSpots from "../assets/thumbnails/instaspots.webp";
+import Todo from "../assets/thumbnails/todoapp.webp";
+import authstack from "../assets/thumbnails/authstack.webp";
+import velora from "../assets/thumbnails/velora.webp";
 interface MyProjectsProps {
   thumbNail: string;  
   name?: string;
@@ -14,7 +16,20 @@ interface MyProjectsProps {
 }
 
 export const projects: MyProjectsProps[] = [
- 
+  {thumbNail: authstack,
+    name: "AuthStack",
+    description: "A full-stack authentication app exploring real auth flows with Neon, Prisma, NextAuth.js, and Bcrypt. Sharp, minimal, production-ready.",
+    tools: ["Next.js", "TypeScript", "NextAuth.js", "Prisma", "Neon", "Bcrypt"],
+    liveLink: "#",
+    repoLink: "https://github.com/Nesix-org/authstack"
+  },
+  {thumbNail: velora,
+    name: "Velora",
+    description: "A modern, full-featured e-commerce platform with product browsing, cart, wishlist, and authentication. Built with Next.js 16 and React 19.",
+    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zod"],
+    liveLink: "#",
+    repoLink: "https://github.com/Nesix-org/velora"
+  },
   {thumbNail: bigFarma,
     name: "BigFarma",
     description: "BigFarma is a modern web app that connects farmers, suppliers, and buyers.",

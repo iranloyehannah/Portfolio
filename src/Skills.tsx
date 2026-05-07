@@ -21,32 +21,32 @@ const skills: Skill[] = [
   { name: "Vite", icon: "https://vitejs.dev/logo.svg" },
 ];
 
-const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
+const Skills: React.FC<SkillsProps> = () => {
   return (
-    <section id="skills" className="flex flex-col items-center justify-center py-16 md:py-24 px-4 md:px-6" style={{ marginBottom: "2rem" }} >
-      <h2
-        className="text-4xl md:text-5xl font-bold mb-12 md:mb-16 gradient-text "
-        style={{ animation: "fadeIn 0.8s ease-out", paddingBottom: "2rem" }}
-      >
-        Frontend Skills
-      </h2>
+    <section id="skills" className="section">
+      <div className="section-head section-head--split">
+        <div>
+          <p className="eyebrow">Toolkit</p>
+          <h2>The stack I reach for when shipping product UI.</h2>
+        </div>
+        <p>
+          A focused set of tools I use to move from a Figma frame to a polished,
+          accessible, production-ready interface.
+        </p>
+      </div>
 
-      <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+      <div className="skills-grid">
         {skills.map((skill, idx) => (
           <div
-            key={idx}
-            className={`skill-badge ${darkMode ? "skill-badge-dark" : "skill-badge-light"}`}
-            style={{
-              animation: `fadeIn 0.6s ease-out ${idx * 0.1}s both`,
-            }}
+            key={skill.name}
+            className="skill-tile fade-up"
+            style={{ animationDelay: `${idx * 50}ms` }}
           >
-            <div className="skill-icon-wrapper">
+            <div className="skill-icon">
               <img
                 src={skill.icon}
                 alt={skill.name}
-                className="skill-icon"
                 onError={(e) => {
-                  // Fallback to text if image fails to load
                   const target = e.target as HTMLImageElement;
                   target.style.display = "none";
                   if (target.parentElement) {
@@ -55,9 +55,7 @@ const Skills: React.FC<SkillsProps> = ({ darkMode }) => {
                 }}
               />
             </div>
-            <span className={`skill-label ${darkMode ? "text-sky-300" : "text-sky-700"}`}>
-              {skill.name}
-            </span>
+            <span className="skill-name">{skill.name}</span>
           </div>
         ))}
       </div>
