@@ -1,10 +1,13 @@
 import { useState } from "react";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 interface ContactProps {
   darkMode: boolean;
 }
 
-const Contact: React.FC<ContactProps> = ({ darkMode }) => {
+const Contact: React.FC<ContactProps> = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,107 +25,124 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
     console.log("Form submitted:", formData);
-   
-    alert("Thank you for your message! I'll get back to you soon.");
+    alert("Thank you for your message — I'll get back to you soon.");
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <section id="contact" className="flex flex-col items-center justify-center py-8 md:py-12 px-4 md:px-6">
-      <h2
-        className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 gradient-text"
-        style={{ animation: "fadeIn 0.8s ease-out", paddingBottom: "2rem" }}
-      >
-        Get In Touch
-      </h2>
+    <section id="contact" className="section">
+      <div className="section-head section-head--split">
+        <div>
+          <p className="eyebrow">Get in touch</p>
+          <h2>Have an idea, a role, or a project you&apos;d like to ship?</h2>
+        </div>
+        <p>
+          I&apos;m open to frontend roles, freelance projects, and thoughtful
+          collaborations. Drop a note below or reach me on any of the channels
+          on the right.
+        </p>
+      </div>
 
-      <div className="w-full max-w-lg">
-        <div
-          className={`contact-card ${darkMode ? "card-dark" : "card-light"}`}
-          style={{ animation: "fadeIn 0.8s ease-out" }}
-        >
-          <form onSubmit={handleSubmit} className="contact-form">
+      <div className="contact-wrap">
+        <form className="contact-form fade-up" onSubmit={handleSubmit}>
+          <div className="field">
+            <label htmlFor="name">Your name</label>
             <input
-              type="text"
               id="name"
               name="name"
+              type="text"
               value={formData.name}
               onChange={handleChange}
+              placeholder="Jane Doe"
               required
-              className={`form-input ${darkMode ? "input-dark" : "input-light"}`}
-              placeholder="Your Name"
             />
+          </div>
 
+          <div className="field">
+            <label htmlFor="email">Email</label>
             <input
-              type="email"
               id="email"
               name="email"
+              type="email"
               value={formData.email}
               onChange={handleChange}
+              placeholder="you@company.com"
               required
-              className={`form-input ${darkMode ? "input-dark" : "input-light"}`}
-              placeholder="your.email@example.com"
             />
+          </div>
 
+          <div className="field">
+            <label htmlFor="message">Message</label>
             <textarea
               id="message"
               name="message"
+              rows={5}
               value={formData.message}
               onChange={handleChange}
+              placeholder="A quick line about what you're working on…"
               required
-              rows={3}
-              className={`form-input form-textarea ${darkMode ? "input-dark" : "input-light"}`}
-              placeholder="Your message..."
             />
-
-            <button
-              type="submit"
-              className={`submit-button ${darkMode ? "button-dark" : "button-light"}`}
-            >
-              <span>Send</span>
-              <span className="button-arrow">→</span>
-            </button>
-          </form>
-
-          <div className="contact-divider">
-            <span
-              style={{
-                color: darkMode ? "#BAE6FD" : "#075985",
-                opacity: 0.5,
-                fontSize: "0.75rem",
-              }}
-            >
-              OR
-            </span>
           </div>
 
-          <div className="contact-links">
+          <button type="submit" className="btn btn-primary">
+            Send message
+            <span className="btn-arrow" aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <aside className="contact-side fade-up delay-2">
+          <h3>Prefer a different channel?</h3>
+          <p>
+            Reach me directly through any of these. I usually reply within a
+            day.
+          </p>
+
+          <div className="contact-channels">
             <a
+              className="contact-channel"
+              href="mailto:iranloye8.hannah@gmail.com"
+            >
+              <span className="contact-channel-icon">
+                <MailOutlineIcon fontSize="small" />
+              </span>
+              <span className="contact-channel-text">
+                <small>Email</small>
+                <strong>iranloye8.hannah@gmail.com</strong>
+              </span>
+            </a>
+
+            <a
+              className="contact-channel"
               href="https://www.linkedin.com/in/iranloye-hannah/"
               target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-              style={{
-                color: darkMode ? "#7DD3FC" : "#0284C7",
-              }}
+              rel="noreferrer"
             >
-              💼 LinkedIn
+              <span className="contact-channel-icon">
+                <LinkedInIcon fontSize="small" />
+              </span>
+              <span className="contact-channel-text">
+                <small>LinkedIn</small>
+                <strong>iranloye-hannah</strong>
+              </span>
             </a>
+
             <a
+              className="contact-channel"
               href="https://github.com/iranloyehannah"
               target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-              style={{
-                color: darkMode ? "#7DD3FC" : "#0284C7",
-              }}
+              rel="noreferrer"
             >
-              💻 GitHub
+              <span className="contact-channel-icon">
+                <GitHubIcon fontSize="small" />
+              </span>
+              <span className="contact-channel-text">
+                <small>GitHub</small>
+                <strong>iranloyehannah</strong>
+              </span>
             </a>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
   );
