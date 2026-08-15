@@ -6,7 +6,7 @@ import interactiveCard from "../assets/thumbnails/interactiveCard.webp";
 import spaceTravel from "../assets/thumbnails/spaceTravel.webp";
 import Todo from "../assets/thumbnails/todoapp.webp";
 import velora from "../assets/thumbnails/velora.webp";
-import premiumCoffee from "../assets/thumbnails/premiumCoffee.svg";
+import premiumCoffee from "../assets/thumbnails/premiumCoffee.webp";
 
 interface Project {
   thumbNail: string;
