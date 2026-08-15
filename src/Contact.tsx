@@ -1,148 +1,59 @@
-import { useState } from "react";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import type { ChangeEvent, FormEvent } from "react";
+import { useState } from "react";
 
-interface ContactProps {
-  darkMode: boolean;
-}
+const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
 
-const Contact: React.FC<ContactProps> = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((current) => ({ ...current, [event.target.name]: event.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message — I'll get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const subject = encodeURIComponent(`Portfolio enquiry from ${formData.name}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
+    setStatus("Opening your email app…");
+    window.location.href = `mailto:iranloye8.hannah@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
-    <section id="contact" className="section">
-      <div className="section-head section-head--split">
-        <div>
-          <p className="eyebrow">Get in touch</p>
-          <h2>Have an idea, a role, or a project you&apos;d like to ship?</h2>
+    <section id="contact" className="contact-section">
+      <div className="section-index" aria-hidden="true">04</div>
+      <div className="contact-grid">
+        <div className="contact-intro">
+          <p className="kicker">Contact</p>
+          <h2>Have something worth <em>building?</em></h2>
+          <p>For frontend roles, freelance work, or thoughtful collaborations, send a note and tell me what you’re trying to make.</p>
+          <a className="email-link" href="mailto:iranloye8.hannah@gmail.com">iranloye8.hannah<br />@gmail.com <span>↗</span></a>
+          <div className="social-links">
+            <a href="https://www.linkedin.com/in/iranloye-hannah/" target="_blank" rel="noreferrer"><LinkedInIcon sx={{ fontSize: 18 }} /> LinkedIn</a>
+            <a href="https://github.com/iranloyehannah" target="_blank" rel="noreferrer"><GitHubIcon sx={{ fontSize: 18 }} /> GitHub</a>
+          </div>
         </div>
-        <p>
-          I&apos;m open to frontend roles, freelance projects, and thoughtful
-          collaborations. Drop a note below or reach me on any of the channels
-          on the right.
-        </p>
-      </div>
 
-      <div className="contact-wrap">
-        <form className="contact-form fade-up" onSubmit={handleSubmit}>
-          <div className="field">
-            <label htmlFor="name">Your name</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Jane Doe"
-              required
-            />
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="field-row">
+            <div className="field">
+              <label htmlFor="name">Name</label>
+              <input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Your name" required />
+            </div>
+            <div className="field">
+              <label htmlFor="email">Email</label>
+              <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="you@company.com" required />
+            </div>
           </div>
-
           <div className="field">
-            <label htmlFor="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="you@company.com"
-              required
-            />
+            <label htmlFor="message">What are you working on?</label>
+            <textarea id="message" name="message" rows={6} value={formData.message} onChange={handleChange} placeholder="A short brief, role, idea, or hello…" required />
           </div>
-
-          <div className="field">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              rows={5}
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="A quick line about what you're working on…"
-              required
-            />
+          <div className="form-footer">
+            <button className="send-button" type="submit">Send enquiry <span>↗</span></button>
+            <p aria-live="polite">{status}</p>
           </div>
-
-          <button type="submit" className="btn btn-primary">
-            Send message
-            <span className="btn-arrow" aria-hidden="true">→</span>
-          </button>
         </form>
-
-        <aside className="contact-side fade-up delay-2">
-          <h3>Prefer a different channel?</h3>
-          <p>
-            Reach me directly through any of these. I usually reply within a
-            day.
-          </p>
-
-          <div className="contact-channels">
-            <a
-              className="contact-channel"
-              href="mailto:iranloye8.hannah@gmail.com"
-            >
-              <span className="contact-channel-icon">
-                <MailOutlineIcon fontSize="small" />
-              </span>
-              <span className="contact-channel-text">
-                <small>Email</small>
-                <strong>iranloye8.hannah@gmail.com</strong>
-              </span>
-            </a>
-
-            <a
-              className="contact-channel"
-              href="https://www.linkedin.com/in/iranloye-hannah/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span className="contact-channel-icon">
-                <LinkedInIcon fontSize="small" />
-              </span>
-              <span className="contact-channel-text">
-                <small>LinkedIn</small>
-                <strong>iranloye-hannah</strong>
-              </span>
-            </a>
-
-            <a
-              className="contact-channel"
-              href="https://github.com/iranloyehannah"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span className="contact-channel-icon">
-                <GitHubIcon fontSize="small" />
-              </span>
-              <span className="contact-channel-text">
-                <small>GitHub</small>
-                <strong>iranloyehannah</strong>
-              </span>
-            </a>
-          </div>
-        </aside>
       </div>
     </section>
   );

@@ -1,66 +1,46 @@
-interface Skill {
-  name: string;
-  icon: string;
-}
-
-interface SkillsProps {
-  darkMode: boolean;
-}
-
-const skills: Skill[] = [
-  { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-  { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "Vue", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
-  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" },
-  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-  { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-  { name: "Vite", icon: "https://vitejs.dev/logo.svg" },
+const capabilities = [
+  {
+    number: "01",
+    title: "Interface engineering",
+    description: "Building component-driven interfaces that remain clear, fast, and maintainable as products grow.",
+    tools: ["React", "Next.js", "Vue", "TypeScript"],
+  },
+  {
+    number: "02",
+    title: "Visual implementation",
+    description: "Translating design intent into responsive layouts with strong rhythm, typography, motion, and detail.",
+    tools: ["CSS", "Tailwind", "Responsive design", "Motion"],
+  },
+  {
+    number: "03",
+    title: "Product quality",
+    description: "Treating accessibility, performance, API states, testing, and deployment as part of the interface—not afterthoughts.",
+    tools: ["Accessibility", "API integration", "Testing", "Git / GitHub"],
+  },
 ];
 
-const Skills: React.FC<SkillsProps> = () => {
-  return (
-    <section id="skills" className="section">
-      <div className="section-head section-head--split">
-        <div>
-          <p className="eyebrow">Toolkit</p>
-          <h2>The stack I reach for when shipping product UI.</h2>
-        </div>
-        <p>
-          A focused set of tools I use to move from a Figma frame to a polished,
-          accessible, production-ready interface.
-        </p>
-      </div>
+const Skills = () => (
+  <section id="skills" className="editorial-section skills-section">
+    <div className="section-index" aria-hidden="true">01</div>
+    <header className="section-heading">
+      <p className="kicker">Toolkit &amp; approach</p>
+      <h2>I care about the <em>whole interface,</em> not just the component.</h2>
+      <p>My stack is intentionally practical: modern frontend tools, backed by the fundamentals that make a product dependable.</p>
+    </header>
 
-      <div className="skills-grid">
-        {skills.map((skill, idx) => (
-          <div
-            key={skill.name}
-            className="skill-tile fade-up"
-            style={{ animationDelay: `${idx * 50}ms` }}
-          >
-            <div className="skill-icon">
-              <img
-                src={skill.icon}
-                alt={skill.name}
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = "none";
-                  if (target.parentElement) {
-                    target.parentElement.innerHTML = `<span class="skill-fallback">${skill.name.charAt(0)}</span>`;
-                  }
-                }}
-              />
-            </div>
-            <span className="skill-name">{skill.name}</span>
+    <div className="capability-list">
+      {capabilities.map((item) => (
+        <article className="capability-row" key={item.number}>
+          <span className="capability-number">{item.number}</span>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+          <div className="capability-tools">
+            {item.tools.map((tool) => <span key={tool}>{tool}</span>)}
           </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+        </article>
+      ))}
+    </div>
+  </section>
+);
 
 export default Skills;

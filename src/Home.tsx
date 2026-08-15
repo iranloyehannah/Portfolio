@@ -1,106 +1,59 @@
-import { Typewriter } from "react-simple-typewriter";
 import Hannah from "./assets/Images/Ih.png";
 import { projects } from "./data/projects";
 
-interface HomeProps {
-  darkMode: boolean;
-}
-
-const focusAreas = [
-  "Interface systems",
-  "Responsive frontends",
-  "Accessible flows",
-];
-
-const stats = [
-  { value: `${projects.length}+`, label: "Shipped projects" },
-  { value: "2024/25", label: "AltSchool diploma" },
-  { value: "Remote", label: "Open to work" },
-];
-
-const Home: React.FC<HomeProps> = ({ darkMode }) => {
+const Home = () => {
   return (
     <main id="home" className="hero">
-      <div className="hero-copy fade-up">
-        <span className="hero-badge">
-          <span className="hero-badge-dot" />
-          Available for new projects
-        </span>
+      <div className="hero-index section-index" aria-hidden="true">00</div>
 
-        <p className="eyebrow">Frontend Engineer · Lagos, Nigeria</p>
+      <div className="hero-grid">
+        <div className="hero-copy reveal">
+          <p className="kicker"><span className="status-dot" />Available for selected opportunities</p>
+          <h1>
+            Frontend craft with <em>clarity,</em> character &amp; code.
+          </h1>
+          <p className="hero-lead">
+            I’m Iranloye Hannah, a frontend engineer who turns product ideas into responsive, accessible interfaces that feel deliberate from the first click to the smallest interaction.
+          </p>
 
-        <h1>
-          Clean code. Smooth interfaces. Products that{" "}
-          <span className="accent-word">ship</span>.
-        </h1>
-
-        <p className="hero-lead">
-          I&apos;m Iranloye Hannah — I design and ship responsive React
-          experiences with a strong eye for structure, motion, and the small
-          details that make products feel finished.
-        </p>
-
-        <div className="hero-typing">
-          <span className="hero-typing__label">Currently focused on</span>
-          <span className="hero-typing__value">
-            <Typewriter
-              words={[
-                "React frontends",
-                "Customer-facing product UI",
-                "Digital brand experiences",
-                "Clean component systems",
-              ]}
-              loop={0}
-              cursor
-              cursorStyle="|"
-              typeSpeed={70}
-              deleteSpeed={40}
-              delaySpeed={1400}
-            />
-          </span>
+          <div className="hero-actions">
+            <a className="action-link action-link--solid" href="#projects">Explore my work <span>↘</span></a>
+            <a className="action-link" href="#contact">Start a conversation <span>→</span></a>
+          </div>
         </div>
 
-        <div className="hero-actions">
-          <a className="btn btn-primary" href="#projects">
-            View projects
-            <span className="btn-arrow" aria-hidden="true">→</span>
-          </a>
-          <a className="btn btn-ghost" href="#contact">
-            Start a conversation
-          </a>
-        </div>
-
-        <div className="hero-meta" aria-label="Focus areas">
-          {focusAreas.map((item) => (
-            <span key={item} className="hero-pill">
-              {item}
-            </span>
-          ))}
+        <div className="hero-portrait reveal reveal-delay">
+          <div className="portrait-accent" aria-hidden="true" />
+          <figure className="portrait-figure">
+            <img src={Hannah} alt="Iranloye Hannah, frontend engineer" />
+            <figcaption>
+              <span>Lagos · Nigeria</span>
+              <span>Open to remote</span>
+            </figcaption>
+          </figure>
+          <div className="portrait-stamp" aria-hidden="true">UI<br />/26</div>
         </div>
       </div>
 
-      <div className="hero-visual fade-up delay-2">
-        <div className="portrait-halo" aria-hidden="true" />
-        <div className="portrait-card">
-          <div className="portrait-meta">
-            <span>Portfolio · 2026</span>
-            <span className="portrait-meta-tag">
-              {darkMode ? "Night" : "Day"}
-            </span>
-          </div>
+      <div className="hero-foot">
+        <div className="hero-fact">
+          <strong>{String(projects.length).padStart(2, "0")}</strong>
+          <span>Selected builds<br />in the archive</span>
+        </div>
+        <div className="hero-fact">
+          <strong>React</strong>
+          <span>TypeScript, Next.js<br />&amp; modern CSS</span>
+        </div>
+        <div className="hero-fact hero-fact--wide">
+          <span>My approach</span>
+          <p>Structure first. Strong typography. Useful motion. Responsive behaviour that is designed—not patched in later.</p>
+        </div>
+      </div>
 
-          <div className="portrait-frame">
-            <img src={Hannah} alt="Iranloye Hannah" />
-          </div>
-
-          <div className="portrait-stats">
-            {stats.map((item) => (
-              <div key={item.label} className="portrait-stat">
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
+      <div className="ticker" aria-label="Areas of focus">
+        <div className="ticker-track">
+          <span>React</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Next.js</span><i>✦</i><span>Accessibility</span><i>✦</i><span>Responsive UI</span><i>✦</i><span>Interaction</span><i>✦</i>
+          <span>React</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Next.js</span><i>✦</i><span>Accessibility</span><i>✦</i><span>Responsive UI</span><i>✦</i><span>Interaction</span><i>✦</i>
         </div>
       </div>
     </main>

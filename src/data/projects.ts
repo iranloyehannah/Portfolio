@@ -1,76 +1,82 @@
-import spaceTravel from "../assets/thumbnails/spaceTravel.webp";
-import ecommerceProduct from "../assets/thumbnails/sneaker.webp";
-import interactiveCard from "../assets/thumbnails/interactiveCard.webp";
-import bigFarma from "../assets/thumbnails/bigFarma.webp";
-import InstaSpots from "../assets/thumbnails/instaspots.webp";
-import Todo from "../assets/thumbnails/todoapp.webp";
 import authstack from "../assets/thumbnails/authstack.webp";
+import bigFarma from "../assets/thumbnails/bigFarma.webp";
+import ecommerceProduct from "../assets/thumbnails/sneaker.webp";
+import InstaSpots from "../assets/thumbnails/instaspots.webp";
+import interactiveCard from "../assets/thumbnails/interactiveCard.webp";
+import spaceTravel from "../assets/thumbnails/spaceTravel.webp";
+import Todo from "../assets/thumbnails/todoapp.webp";
 import velora from "../assets/thumbnails/velora.webp";
-interface MyProjectsProps {
-  thumbNail: string;  
-  name?: string;
-  description?: string;
-  tools?: string[];
+
+interface Project {
+  thumbNail: string;
+  name: string;
+  description: string;
+  tools: string[];
   liveLink?: string;
   repoLink?: string;
 }
 
-export const projects: MyProjectsProps[] = [
-  {thumbNail: authstack,
+export const projects: Project[] = [
+  {
+    thumbNail: authstack,
     name: "AuthStack",
-    description: "A full-stack authentication app exploring real auth flows with Neon, Prisma, NextAuth.js, and Bcrypt. Sharp, minimal, production-ready.",
+    description: "A full-stack authentication experience exploring production-style sign-in flows, protected routes, persistence, and secure credential handling.",
     tools: ["Next.js", "TypeScript", "NextAuth.js", "Prisma", "Neon", "Bcrypt"],
-    liveLink: "#",
-    repoLink: "https://github.com/Nesix-org/authstack"
+    repoLink: "https://github.com/Nesix-org/authstack",
   },
-  {thumbNail: velora,
+  {
+    thumbNail: velora,
     name: "Velora",
-    description: "A modern, full-featured e-commerce platform with product browsing, cart, wishlist, and authentication. Built with Next.js 16 and React 19.",
+    description: "A modern e-commerce platform with product discovery, cart, wishlist, authentication, validation, and expressive interaction design.",
     tools: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Zod"],
-    liveLink: "#",
-    repoLink: "https://github.com/Nesix-org/velora"
+    repoLink: "https://github.com/Nesix-org/velora",
   },
-  {thumbNail: bigFarma,
+  {
+    thumbNail: bigFarma,
     name: "BigFarma",
-    description: "BigFarma is a modern web app that connects farmers, suppliers, and buyers.",
-    tools: ["React", "Javascript", "Tailwind CSS", "Axios"],
+    description: "A collaborative agritech web product connecting farmers, suppliers, and buyers through a clear, responsive marketplace experience.",
+    tools: ["React", "JavaScript", "Tailwind CSS", "Axios"],
     liveLink: "https://big-farma-frontend.vercel.app",
-    repoLink: "https://github.com/BigFarma-Agrotech/BigFarma_Frontend"
+    repoLink: "https://github.com/BigFarma-Agrotech/BigFarma_Frontend",
   },
-  {thumbNail:spaceTravel,
+  {
+    thumbNail: spaceTravel,
     name: "Space Tourism",
-    description: "This is a fully responsive Space Tourism website built with React and TypeScript.",
-    tools: ["Typescript", "React", "Tailwind CSS", "Framer Motion"],
+    description: "A responsive multi-page experience translating a detailed visual brief into immersive navigation, motion, and adaptive layouts.",
+    tools: ["TypeScript", "React", "Tailwind CSS", "Framer Motion"],
     liveLink: "https://space-tourism-tau-seven.vercel.app/",
-    repoLink: "https://github.com/iranloyehannah/Space-Tourism"
+    repoLink: "https://github.com/iranloyehannah/Space-Tourism",
   },
-  {thumbNail: ecommerceProduct,
-    name: "Ecommerce Single Product Page",
-    description: "A Frontend Mentor project showcasing a single product page for an ecommerce site.",
-    tools: ["React", "Typescript", "Tailwind CSS"],
+  {
+    thumbNail: ecommerceProduct,
+    name: "E-commerce Product Page",
+    description: "A focused commerce interface with responsive image galleries, cart interactions, product controls, and careful mobile behaviour.",
+    tools: ["React", "TypeScript", "Tailwind CSS"],
     liveLink: "https://ecommerce-product-ochre.vercel.app/",
-    repoLink: "https://github.com/iranloyehannah/Ecommerce-Product"
+    repoLink: "https://github.com/iranloyehannah/Ecommerce-Product",
   },
-  {thumbNail: interactiveCard,
+  {
+    thumbNail: interactiveCard,
     name: "Interactive Card",
-    description: "This project is a React application built with Vite. It features an interactive credit card details form with live preview and validation.",
-    tools: ["Javascript", "React", "CSS"],
+    description: "An interactive card-details flow with live visual feedback, structured validation, and responsive form states.",
+    tools: ["JavaScript", "React", "CSS"],
     liveLink: "https://react-interactive-card-gamma.vercel.app/",
-    repoLink: "https://github.com/iranloyehannah/React-Interactive-card"
+    repoLink: "https://github.com/iranloyehannah/React-Interactive-card",
   },
-
-  {thumbNail: Todo,
+  {
+    thumbNail: Todo,
     name: "Todo List",
-    description: "This project is a Javascript application, It displays and add new cards.",
-    tools: ["React", "Material Ui", "TailwindCss"],
+    description: "A compact productivity interface exploring stateful interactions, component composition, and clean task-management flows.",
+    tools: ["React", "Material UI", "Tailwind CSS"],
     liveLink: "https://react-todo-app-five-blond.vercel.app/",
-    repoLink: "https://github.com/iranloyehannah/React-Todo-App"
+    repoLink: "https://github.com/iranloyehannah/React-Todo-App",
   },
-  {thumbNail: InstaSpots,
+  {
+    thumbNail: InstaSpots,
     name: "InstaSpots",
-    description: "This project is a Javascript application, It displays and add new cards.",
-    tools: ["Javascript", "Html", "CSS"],
+    description: "A collaborative social gallery concept focused on reusable content cards, responsive composition, and straightforward interaction patterns.",
+    tools: ["JavaScript", "HTML", "CSS"],
     liveLink: "https://circle-03-instaspotsproject.vercel.app/",
-    repoLink: "https://github.com/Caisere/circle-03-instaspotsproject"
+    repoLink: "https://github.com/Caisere/circle-03-instaspotsproject",
   },
-]
+];
