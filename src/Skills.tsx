@@ -1,20 +1,46 @@
 const capabilities = [
-  { number:"01", title:"Interface systems", description:"I turn product requirements into reusable component systems that stay coherent as screens, states, and teams grow.", tools:["React","Next.js","Vue","TypeScript"] },
-  { number:"02", title:"Visual precision", description:"I care about rhythm, proportion, typography, responsive behaviour, and the details that make implementation feel authored rather than assembled.", tools:["CSS","Tailwind","Responsive design","Motion"] },
-  { number:"03", title:"Product reliability", description:"Accessibility, API states, performance, testing, and deployment are part of the interface quality—not tasks reserved for the end.", tools:["Accessibility","API integration","Testing","Git / GitHub"] },
+  {
+    number: "01",
+    title: "Interface engineering",
+    description: "Building component-driven interfaces that remain clear, fast, and maintainable as products grow.",
+    tools: ["React", "Next.js", "Vue", "TypeScript"],
+  },
+  {
+    number: "02",
+    title: "Visual implementation",
+    description: "Translating design intent into responsive layouts with strong rhythm, typography, motion, and detail.",
+    tools: ["CSS", "Tailwind", "Responsive design", "Motion"],
+  },
+  {
+    number: "03",
+    title: "Product quality",
+    description: "Treating accessibility, performance, API states, testing, and deployment as part of the interface—not afterthoughts.",
+    tools: ["Accessibility", "API integration", "Testing", "Git / GitHub"],
+  },
 ];
 
-const Skills=()=> <section id="skills" className="dossier-section approach-section">
-  <div className="section-rail"><span>01</span><p>Approach</p></div>
-  <div className="section-body">
-    <header className="dossier-heading"><p className="micro-label">How I work</p><h2>Not just pages.<br/><em>Systems with intent.</em></h2><p>My best work sits where interface design and frontend engineering overlap.</p></header>
-    <div className="capability-bands">
-      {capabilities.map(item=><article className="capability-band" key={item.number}>
-        <div className="capability-band__title"><span>{item.number}</span><h3>{item.title}</h3></div>
-        <p>{item.description}</p>
-        <div className="tool-line">{item.tools.map(tool=><span key={tool}>{tool}</span>)}</div>
-      </article>)}
+const Skills = () => (
+  <section id="skills" className="editorial-section skills-section">
+    <div className="section-index" aria-hidden="true">01</div>
+    <header className="section-heading">
+      <p className="kicker">Toolkit &amp; approach</p>
+      <h2>I care about the <em>whole interface,</em> not just the component.</h2>
+      <p>My stack is intentionally practical: modern frontend tools, backed by the fundamentals that make a product dependable.</p>
+    </header>
+
+    <div className="capability-list">
+      {capabilities.map((item) => (
+        <article className="capability-row" key={item.number}>
+          <span className="capability-number">{item.number}</span>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+          <div className="capability-tools">
+            {item.tools.map((tool) => <span key={tool}>{tool}</span>)}
+          </div>
+        </article>
+      ))}
     </div>
-  </div>
-</section>;
+  </section>
+);
+
 export default Skills;
