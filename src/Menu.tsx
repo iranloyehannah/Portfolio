@@ -19,7 +19,6 @@ const links = [
 
 function Menu({ darkMode, onToggle }: MenuProps) {
   const [open, setOpen] = useState(false);
-
   const closeMenu = () => setOpen(false);
 
   return (
@@ -29,7 +28,7 @@ function Menu({ darkMode, onToggle }: MenuProps) {
           <span className="nav-brand__mark">IH</span>
           <span className="nav-brand__copy">
             <strong>Iranloye Hannah</strong>
-            <small>Frontend engineer</small>
+            <small>Frontend / Product UI</small>
           </span>
         </a>
 

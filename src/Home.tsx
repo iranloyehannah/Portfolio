@@ -8,17 +8,20 @@ const Home = () => {
 
       <div className="hero-grid">
         <div className="hero-copy reveal">
-          <p className="kicker"><span className="status-dot" />Available for selected opportunities</p>
-          <h1>
-            Frontend craft with <em>clarity,</em> character &amp; code.
+          <p className="kicker"><span className="status-dot" />Frontend engineer · React / Next.js / TypeScript</p>
+
+          <h1 className="hero-title">
+            I make complex products
+            <span className="hero-title__accent">feel obvious.</span>
           </h1>
+
           <p className="hero-lead">
-            I’m Iranloye Hannah, a frontend engineer who turns product ideas into responsive, accessible interfaces that feel deliberate from the first click to the smallest interaction.
+            I turn product ideas into fast, accessible interfaces with strong visual judgment and production-minded code — the kind of frontend work that feels clear to users and dependable to teams.
           </p>
 
           <div className="hero-actions">
-            <a className="action-link action-link--solid" href="#projects">Explore my work <span>↘</span></a>
-            <a className="action-link" href="#contact">Start a conversation <span>→</span></a>
+            <a className="action-link action-link--solid" href="#projects">View selected work <span>↘</span></a>
+            <a className="action-link" href="#contact">Discuss a role or project <span>→</span></a>
           </div>
         </div>
 
@@ -31,7 +34,7 @@ const Home = () => {
               <span>Open to remote</span>
             </figcaption>
           </figure>
-          <div className="portrait-stamp" aria-hidden="true">UI<br />/26</div>
+          <div className="portrait-stamp" aria-hidden="true">FE<br />/26</div>
         </div>
       </div>
 
@@ -42,18 +45,18 @@ const Home = () => {
         </div>
         <div className="hero-fact">
           <strong>React</strong>
-          <span>TypeScript, Next.js<br />&amp; modern CSS</span>
+          <span>Next.js, TypeScript<br />&amp; modern CSS</span>
         </div>
         <div className="hero-fact hero-fact--wide">
-          <span>My approach</span>
-          <p>Structure first. Strong typography. Useful motion. Responsive behaviour that is designed—not patched in later.</p>
+          <span>What I bring</span>
+          <p>Product thinking, design sensitivity and engineering discipline in the same frontend — from responsive systems and accessibility to the details that make a release feel finished.</p>
         </div>
       </div>
 
       <div className="ticker" aria-label="Areas of focus">
         <div className="ticker-track">
-          <span>React</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Next.js</span><i>✦</i><span>Accessibility</span><i>✦</i><span>Responsive UI</span><i>✦</i><span>Interaction</span><i>✦</i>
-          <span>React</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Next.js</span><i>✦</i><span>Accessibility</span><i>✦</i><span>Responsive UI</span><i>✦</i><span>Interaction</span><i>✦</i>
+          <span>Product UI</span><i>✦</i><span>React</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Next.js</span><i>✦</i><span>Accessibility</span><i>✦</i><span>Responsive Systems</span><i>✦</i><span>Interaction</span><i>✦</i>
+          <span>Product UI</span><i>✦</i><span>React</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Next.js</span><i>✦</i><span>Accessibility</span><i>✦</i><span>Responsive Systems</span><i>✦</i><span>Interaction</span><i>✦</i>
         </div>
       </div>
     </main>

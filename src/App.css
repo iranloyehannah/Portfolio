@@ -8,8 +8,9 @@
   --line-strong: rgba(23, 23, 19, 0.42);
   --accent: #ff5b38;
   --acid: #d9ff43;
-  --display: "Instrument Serif", Georgia, serif;
-  --sans: "Manrope", system-ui, sans-serif;
+  --display: "Bricolage Grotesque", system-ui, sans-serif;
+  --sans: "DM Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
   --frame: min(100% - 40px, 1380px);
 }
 
@@ -311,6 +312,190 @@ body { background: var(--paper); color: var(--ink); }
 
 @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes ticker { to { transform: translateX(-50%); } }
+
+/* ============================================================
+   TYPOGRAPHIC DIRECTION — CREATIVE PRODUCT / ENGINEERING
+   ============================================================ */
+.site-shell {
+  font-family: var(--sans);
+}
+
+.section-index,
+.kicker,
+.nav-links a span,
+.nav-brand__copy small,
+.portrait-figure figcaption,
+.hero-fact span,
+.ticker-track,
+.column-label,
+.education-item > span,
+.practice-column li span,
+.capability-number,
+.capability-tools span,
+.work-title-row > span,
+.work-tools span,
+.work-actions a,
+.field label,
+.social-links a,
+.site-footer {
+  font-family: var(--mono);
+}
+
+.nav-brand__mark {
+  font-family: var(--display);
+  font-weight: 750;
+  letter-spacing: -.075em;
+}
+
+.nav-brand__copy strong {
+  font-family: var(--display);
+  font-size: .86rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: -.025em;
+}
+
+.nav-brand__copy small {
+  font-size: .56rem;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  font-family: var(--sans);
+  font-weight: 650;
+  letter-spacing: -.01em;
+}
+
+.kicker {
+  font-size: .62rem;
+  letter-spacing: .1em;
+}
+
+.hero-copy {
+  max-width: 900px;
+}
+
+.hero h1,
+.section-heading h2,
+.contact-intro h2 {
+  font-family: var(--display);
+  font-style: normal;
+}
+
+.hero-title {
+  max-width: 900px;
+  font-size: clamp(3.05rem, 5.35vw, 6.1rem);
+  font-weight: 690 !important;
+  line-height: .92 !important;
+  letter-spacing: -.067em !important;
+  text-wrap: balance;
+}
+
+.hero-title__accent {
+  display: block;
+  width: fit-content;
+  margin-left: clamp(18px, 3vw, 58px);
+  color: var(--accent);
+  font-weight: 360;
+  letter-spacing: -.075em;
+  position: relative;
+}
+
+.hero-title__accent::before {
+  content: "↳";
+  position: absolute;
+  left: -1.55em;
+  top: .31em;
+  font-family: var(--mono);
+  font-size: .22em;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.hero-lead {
+  margin-top: 30px;
+  max-width: 690px;
+  font-size: clamp(1.02rem, 1.15vw, 1.17rem);
+  line-height: 1.63;
+  letter-spacing: -.018em;
+}
+
+.action-link {
+  font-family: var(--mono);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+}
+
+.hero-fact strong {
+  font-family: var(--display);
+  font-weight: 680;
+  letter-spacing: -.055em;
+}
+
+.hero-fact--wide p,
+.section-heading > p,
+.projects-heading > p,
+.capability-row p,
+.practice-column li p,
+.work-description,
+.contact-intro > p:not(.kicker) {
+  letter-spacing: -.012em;
+}
+
+.section-heading h2,
+.contact-intro h2 {
+  font-weight: 650;
+  letter-spacing: -.058em;
+  line-height: .97;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.65rem, 4.7vw, 5.15rem);
+}
+
+.hero h1 em,
+.section-heading h2 em,
+.contact-intro h2 em {
+  font-style: normal;
+  font-weight: 340;
+  letter-spacing: -.07em;
+}
+
+.capability-row h3,
+.education-item h3,
+.work-title-row h3,
+.email-link {
+  font-family: var(--display);
+  font-weight: 650;
+  letter-spacing: -.045em;
+}
+
+.capability-row h3 {
+  line-height: 1.03;
+}
+
+.education-item h3 {
+  line-height: 1.04;
+}
+
+.work-title-row h3 {
+  font-size: clamp(2.15rem, 3.65vw, 4rem);
+  line-height: .97;
+}
+
+.email-link {
+  line-height: .96;
+}
+
+.portrait-stamp {
+  font-family: var(--display);
+  font-weight: 750;
+  letter-spacing: -.045em;
+}
 
 @media (max-width: 1080px) {
   :root { --frame: min(100% - 28px, 1380px); }
