@@ -6,6 +6,7 @@ import interactiveCard from "../assets/thumbnails/interactiveCard.webp";
 import spaceTravel from "../assets/thumbnails/spaceTravel.webp";
 import Todo from "../assets/thumbnails/todoapp.webp";
 import velora from "../assets/thumbnails/velora.webp";
+import premiumCoffee from "../assets/thumbnails/premiumCoffee.svg";
 
 interface Project {
   thumbNail: string;
@@ -17,6 +18,14 @@ interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    thumbNail: premiumCoffee,
+    name: "Premium Coffee Storefront",
+    description: "A polished, responsive coffee e-commerce storefront designed around premium product presentation, intuitive shopping flows, and a refined editorial retail experience.",
+    tools: ["Next.js", "React", "TypeScript", "CSS", "Lucide"],
+    liveLink: "https://premium-coffee-storefront.vercel.app/",
+    repoLink: "https://github.com/iranloyehannah/premium-coffee-storefront",
+  },
   {
     thumbNail: authstack,
     name: "AuthStack",
